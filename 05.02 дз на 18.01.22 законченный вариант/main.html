@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Авторизация </title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/script.js"></script>
+</head>
+
+<body>
+
+    <main id="main-holder">
+        <h1 id="login-header"> Авторизация </h1>
+        
+        <div id="login-error-msg-holder">
+          <p id="login-error-msg"> Неправильный ввод данных или такого пользователя не существует. <span id="error-msg-second-line"> Попробуйте еще раз. </span></p>
+        </div>
+        
+        <form id="login-form">
+
+          <input type="text" name="name" id="name-field" class="login-form-field" placeholder="Имя">
+          <script>
+            document.querySelector('#name-field').oninput = e => e.target.value = e.target.value.replace(/^[a-zA-Z0-9!@#$^&%*№;(+{=-[}):<>,.]+$/g, ''); // Запрет на написание цифр, английских букв и спец.символов
+          </script>
+
+          <input type="text" name="surname" id="username-field" class="login-form-field" placeholder="Фамилия">
+          <script>
+            document.querySelector('#username-field').oninput = e => e.target.value = e.target.value.replace(/^[a-zA-Z0-9!@#$^&%*№;(+{=-[}):<>,.]+$/g, ''); // Запрет на написание цифр, английских букв и спец.символов
+          </script>
+
+          <input type="text" name="patronymic" id="patronymic-field" class="login-form-field" placeholder="Отчество">
+          <script>
+            document.querySelector('#patronymic-field').oninput = e => e.target.value = e.target.value.replace(/^[a-zA-Z0-9!@#$^&%*№;(+{=-[}):<>,.]+$/g, ''); // Запрет на написание цифр, английских букв и спец.символов
+          </script>
+
+          <input type="text" name="email" id="email-field" class="login-form-field" placeholder="Почта">
+          <script>
+            document.querySelector('#email-field').oninput = e => e.target.value = e.target.value.replace(/^[а-яА-ЯёЁ]/g, ''); // Проверка что в строке введена почта 
+          </script>
+
+          <input type="text" name="number" id="number-field" maxlength="11" class="login-form-field" placeholder="Номер">
+          <script>
+            document.querySelector('#number-field').oninput = e => e.target.value = e.target.value.replace(/\D/g, ''); // Запрет на написание любых символов кроме цифр
+          </script>
+
+          <input type="text" name="login" id="login-field" class="login-form-field" placeholder="Логин">
+          <script>
+            document.querySelector('#login-field').oninput = e => e.target.value = e.target.value.replace(/^[а-яА-ЯёЁ]/g, ''); // Запрет на написание русских букв
+          </script>
+
+          <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Пароль">
+          <script>
+            document.querySelector('#password-field').oninput = e => e.target.value = e.target.value.replace(/^[а-яА-ЯёЁ]/g, ''); // Запрет на написание русских букв
+          </script>
+
+          <input type="password" name="second_password" id="second_password-field" class="login-form-field" placeholder="Повторите пароль">
+          <script>
+            document.querySelector('#second_password-field').oninput = e => e.target.value = e.target.value.replace(/^[а-яА-ЯёЁ]/g, ''); // Запрет на написание русских букв
+          </script>
+
+          <input type="submit" value="Login" id="login-form-submit"> 
+
+        </form>
+      
+      </main>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
